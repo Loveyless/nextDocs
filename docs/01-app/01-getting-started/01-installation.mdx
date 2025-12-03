@@ -1,19 +1,19 @@
 ---
-title: Installation
-description: Learn how to create a new Next.js application with the `create-next-app` CLI, and set up TypeScript, ESLint, and Module Path Aliases.
+title: 安装
+description: 学习如何使用 `create-next-app` CLI 创建新的 Next.js 应用，并设置 TypeScript、ESLint 和模块路径别名。
 ---
 
 {/* The content of this doc is shared between the app and pages router. You can use the `<PagesOnly>Content</PagesOnly>` component to add content that is specific to the Pages Router. Any shared content should not be wrapped in a component. */}
 
 <AppOnly>
 
-Create a new Next.js app and run it locally.
+创建一个新的 Next.js 应用并在本地运行。
 
-## Quick start
+## 快速开始
 
-1. Create a new Next.js app named `my-app`
-2. `cd my-app` and start the dev server.
-3. Visit `http://localhost:3000`.
+1. 创建一个名为 `my-app` 的新 Next.js 应用
+2. `cd my-app` 并启动开发服务器
+3. 访问 `http://localhost:3000`
 
 ```bash package="pnpm"
 pnpm create next-app@latest my-app --yes
@@ -43,60 +43,60 @@ bun dev
 
 </AppOnly>
 
-## System requirements
+## 系统要求
 
-Before you begin, make sure your development environment meets the following requirements:
+开始之前，请确保你的开发环境满足以下要求：
 
-- Minimum Node.js version: [20.9](https://nodejs.org/)
-- Operating systems: macOS, Windows (including WSL), and Linux.
+- 最低 Node.js 版本：[20.9](https://nodejs.org/)
+- 操作系统：macOS、Windows（包括 WSL）和 Linux
 
-## Supported browsers
+## 支持的浏览器
 
-Next.js supports modern browsers with zero configuration.
+Next.js 无需配置即可支持现代浏览器。
 
 - Chrome 111+
 - Edge 111+
 - Firefox 111+
 - Safari 16.4+
 
-Learn more about [browser support](/docs/architecture/supported-browsers), including how to configure polyfills and target specific browsers.
+了解更多关于[浏览器支持](/docs/architecture/supported-browsers)的信息，包括如何配置 polyfill 和定位特定浏览器。
 
-## Create with the CLI
+## 使用 CLI 创建
 
-The quickest way to create a new Next.js app is using [`create-next-app`](/docs/app/api-reference/cli/create-next-app), which sets up everything automatically for you. To create a project, run:
+创建新的 Next.js 应用的最快方式是使用 [`create-next-app`](/docs/app/api-reference/cli/create-next-app)，它会为你自动设置所有内容。要创建项目，请运行：
 
 ```bash filename="Terminal"
 npx create-next-app@latest
 ```
 
-On installation, you'll see the following prompts:
+安装时，你会看到以下提示：
 
 ```txt filename="Terminal"
-What is your project named? my-app
-Would you like to use the recommended Next.js defaults?
-    Yes, use recommended defaults - TypeScript, ESLint, Tailwind CSS, App Router, Turbopack
-    No, reuse previous settings
-    No, customize settings - Choose your own preferences
+你的项目叫什么名字？ my-app
+你是否要使用推荐的 Next.js 默认设置？
+    是，使用推荐的默认设置 - TypeScript、ESLint、Tailwind CSS、App Router、Turbopack
+    否，重用之前的设置
+    否，自定义设置 - 选择你自己的偏好
 ```
 
-If you choose to `customize settings`, you'll see the following prompts:
+如果你选择 `自定义设置`，你会看到以下提示：
 
 ```txt filename="Terminal"
-Would you like to use TypeScript? No / Yes
-Which linter would you like to use? ESLint / Biome / None
-Would you like to use React Compiler? No / Yes
-Would you like to use Tailwind CSS? No / Yes
-Would you like your code inside a `src/` directory? No / Yes
-Would you like to use App Router? (recommended) No / Yes
-Would you like to customize the import alias (`@/*` by default)? No / Yes
-What import alias would you like configured? @/*
+你是否要使用 TypeScript？ 否 / 是
+你想要使用哪个 linter？ ESLint / Biome / 无
+你是否要使用 React Compiler？ 否 / 是
+你是否要使用 Tailwind CSS？ 否 / 是
+你是否希望代码在 `src/` 目录中？ 否 / 是
+你是否要使用 App Router？（推荐） 否 / 是
+你是否要自定义导入别名（默认是 `@/*`）？ 否 / 是
+你想要配置什么导入别名？ @/*
 ```
 
-After the prompts, [`create-next-app`](/docs/app/api-reference/cli/create-next-app) will create a folder with your project name and install the required dependencies.
+在提示之后，[`create-next-app`](/docs/app/api-reference/cli/create-next-app) 会创建一个以你的项目命名的文件夹并安装所需的依赖项。
 
-## Manual installation
+## 手动安装
 
-To manually create a new Next.js app, install the required packages:
+要手动创建新的 Next.js 应用，请安装所需的包：
 
 ```bash package="pnpm"
 pnpm i next@latest react@latest react-dom@latest
@@ -114,9 +114,9 @@ yarn add next@latest react@latest react-dom@latest
 bun add next@latest react@latest react-dom@latest
 ```
 
-> **Good to know**: The App Router uses [React canary releases](https://react.dev/blog/2023/05/03/react-canaries) built-in, which include all the stable React 19 changes, as well as newer features being validated in frameworks. The Pages Router uses the React version you install in `package.json`.
+> **注意**：App Router 内置使用 [React canary releases](https://react.dev/blog/2023/05/03/react-canaries)，其中包含所有稳定的 React 19 变更，以及正在框架中验证的新功能。Pages Router 使用你在 `package.json` 中安装的 React 版本。
 
-Then, add the following scripts to your `package.json` file:
+然后，将以下脚本添加到你的 `package.json` 文件中：
 
 ```json filename="package.json"
 {
@@ -130,22 +130,22 @@ Then, add the following scripts to your `package.json` file:
 }
 ```
 
-These scripts refer to the different stages of developing an application:
+这些脚本指的是应用开发的不同阶段：
 
-- `next dev`: Starts the development server using Turbopack (default bundler).
-- `next build`: Builds the application for production.
-- `next start`: Starts the production server.
-- `eslint`: Runs ESLint.
+- `next dev`：使用 Turbopack（默认打包器）启动开发服务器。
+- `next build`：为生产环境构建应用。
+- `next start`：启动生产服务器。
+- `eslint`：运行 ESLint。
 
-Turbopack is now the default bundler. To use Webpack run `next dev --webpack` or `next build --webpack`. See the [Turbopack docs](/docs/app/api-reference/turbopack) for configuration details.
+Turbopack 现在是默认打包器。要使用 Webpack，请运行 `next dev --webpack` 或 `next build --webpack`。查看 [Turbopack 文档](/docs/app/api-reference/turbopack)了解配置详情。
 
 <AppOnly>
 
-### Create the `app` directory
+### 创建 `app` 目录
 
-Next.js uses file-system routing, which means the routes in your application are determined by how you structure your files.
+Next.js 使用文件系统路由，这意味着应用中的路由由你的文件结构决定。
 
-Create an `app` folder. Then, inside `app`, create a `layout.tsx` file. This file is the [root layout](/docs/app/api-reference/file-conventions/layout#root-layout). It's required and must contain the `<html>` and `<body>` tags.
+创建一个 `app` 文件夹。然后，在 `app` 内部创建一个 `layout.tsx` 文件。这个文件是[根布局](/docs/app/api-reference/file-conventions/layout#root-layout)。它是必需的，必须包含 `<html>` 和 `<body>` 标签。
 
 ```tsx filename="app/layout.tsx" switcher
 export default function RootLayout({
@@ -171,7 +171,7 @@ export default function RootLayout({ children }) {
 }
 ```
 
-Create a home page `app/page.tsx` with some initial content:
+创建一个带有初始内容的主页 `app/page.tsx`：
 
 ```tsx filename="app/page.tsx" switcher
 export default function Page() {
@@ -296,29 +296,29 @@ export default function Page() {
 }
 ```
 
-## Run the development server
+## 运行开发服务器
 
-1. Run `npm run dev` to start the development server.
-2. Visit `http://localhost:3000` to view your application.
-3. Edit the <AppOnly>`app/page.tsx`</AppOnly><PagesOnly>`pages/index.tsx`</PagesOnly> file and save it to see the updated result in your browser.
+1. 运行 `npm run dev` 启动开发服务器。
+2. 访问 `http://localhost:3000` 查看你的应用。
+3. 编辑 <AppOnly>`app/page.tsx`</AppOnly><PagesOnly>`pages/index.tsx`</PagesOnly> 文件并保存，在你的浏览器中看到更新结果。
 
-## Set up TypeScript
+## 设置 TypeScript
 
-> Minimum TypeScript version: `v5.1.0`
+> 最低 TypeScript 版本：`v5.1.0`
 
-Next.js comes with built-in TypeScript support. To add TypeScript to your project, rename a file to `.ts` / `.tsx` and run `next dev`. Next.js will automatically install the necessary dependencies and add a `tsconfig.json` file with the recommended config options.
+Next.js 内置支持 TypeScript。要将 TypeScript 添加到项目中，请将文件重命名为 `.ts` / `.tsx` 并运行 `next dev`。Next.js 会自动安装必要的依赖项并添加带有推荐配置选项的 `tsconfig.json` 文件。
 
 <AppOnly>
 
-### IDE Plugin
+### IDE 插件
 
-Next.js includes a custom TypeScript plugin and type checker, which VSCode and other code editors can use for advanced type-checking and auto-completion.
+Next.js 包含自定义的 TypeScript 插件和类型检查器，VSCode 和其他代码编辑器可以使用它进行高级类型检查和自动完成。
 
-You can enable the plugin in VS Code by:
+你可以通过以下方式在 VS Code 中启用插件：
 
-1. Opening the command palette (`Ctrl/⌘` + `Shift` + `P`)
-2. Searching for "TypeScript: Select TypeScript Version"
-3. Selecting "Use Workspace Version"
+1. 打开命令面板 (`Ctrl/⌘` + `Shift` + `P`)
+2. 搜索 "TypeScript: 选择 TypeScript 版本"
+3. 选择 "使用工作区版本"
 
 <Image
   alt="TypeScript Command Palette"
@@ -332,11 +332,11 @@ You can enable the plugin in VS Code by:
 
 See the [TypeScript reference](/docs/app/api-reference/config/next-config-js/typescript) page for more information.
 
-## Set up linting
+## 设置代码检查
 
-Next.js supports linting with either ESLint or Biome. Choose a linter and run it directly via `package.json` scripts.
+Next.js 支持使用 ESLint 或 Biome 进行代码检查。选择一个 linter 并通过 `package.json` 脚本直接运行它。
 
-- Use **ESLint** (comprehensive rules):
+- 使用 **ESLint**（全面的规则）：
 
 ```json filename="package.json"
 {
@@ -347,7 +347,7 @@ Next.js supports linting with either ESLint or Biome. Choose a linter and run it
 }
 ```
 
-- Or use **Biome** (fast linter + formatter):
+- 或者使用 **Biome**（快速的 linter + 格式化工具）：
 
 ```json filename="package.json"
 {
@@ -358,33 +358,33 @@ Next.js supports linting with either ESLint or Biome. Choose a linter and run it
 }
 ```
 
-If your project previously used `next lint`, migrate your scripts to the ESLint CLI with the codemod:
+如果你的项目之前使用了 `next lint`，请使用 codemod 将你的脚本迁移到 ESLint CLI：
 
 ```bash filename="Terminal"
 npx @next/codemod@canary next-lint-to-eslint-cli .
 ```
 
-If you use ESLint, create an explicit config (recommended `eslint.config.mjs`). ESLint supports both [the legacy `.eslintrc.*` and the newer `eslint.config.mjs` formats](https://eslint.org/docs/latest/use/configure/configuration-files#configuring-eslint). See the [ESLint API reference](/docs/app/api-reference/config/eslint#with-core-web-vitals) for a recommended setup.
+如果你使用 ESLint，请创建一个明确的配置（推荐使用 `eslint.config.mjs`）。ESLint 同时支持[传统的 `.eslintrc.*` 和较新的 `eslint.config.mjs` 格式](https://eslint.org/docs/latest/use/configure/configuration-files#configuring-eslint)。查看 [ESLint API 参考](/docs/app/api-reference/config/eslint#with-core-web-vitals)获取推荐的设置。
 
-> **Good to know**: Starting with Next.js 16, `next build` no longer runs the linter automatically. Instead, you can run your linter through NPM scripts.
+> **注意**：从 Next.js 16 开始，`next build` 不再自动运行 linter。相反，你可以通过 NPM 脚本运行 linter。
 
-See the [ESLint Plugin](/docs/app/api-reference/config/eslint) page for more information.
+查看 [ESLint 插件](/docs/app/api-reference/config/eslint)页面获取更多信息。
 
-## Set up Absolute Imports and Module Path Aliases
+## 设置绝对导入和模块路径别名
 
-Next.js has in-built support for the `"paths"` and `"baseUrl"` options of `tsconfig.json` and `jsconfig.json` files.
+Next.js 内置支持 `tsconfig.json` 和 `jsconfig.json` 文件的 `"paths"` 和 `"baseUrl"` 选项。
 
-These options allow you to alias project directories to absolute paths, making it easier and cleaner to import modules. For example:
+这些选项允许你将项目目录别名为绝对路径，使导入模块更容易和更清晰。例如：
 
 ```jsx
-// Before
+// 之前
 import { Button } from '../../../components/button'
 
-// After
+// 之后
 import { Button } from '@/components/button'
 ```
 
-To configure absolute imports, add the `baseUrl` configuration option to your `tsconfig.json` or `jsconfig.json` file. For example:
+要配置绝对导入，请将 `baseUrl` 配置选项添加到你的 `tsconfig.json` 或 `jsconfig.json` 文件中。例如：
 
 ```json filename="tsconfig.json or jsconfig.json"
 {
@@ -394,9 +394,9 @@ To configure absolute imports, add the `baseUrl` configuration option to your `t
 }
 ```
 
-In addition to configuring the `baseUrl` path, you can use the `"paths"` option to `"alias"` module paths.
+除了配置 `baseUrl` 路径外，你还可以使用 `"paths"` 选项来 "别名" 模块路径。
 
-For example, the following configuration maps `@/components/*` to `components/*`:
+例如，以下配置将 `@/components/*` 映射到 `components/*`：
 
 ```json filename="tsconfig.json or jsconfig.json"
 {
@@ -410,4 +410,4 @@ For example, the following configuration maps `@/components/*` to `components/*`
 }
 ```
 
-Each of the `"paths"` are relative to the `baseUrl` location.
+每个 `"paths"` 都相对于 `baseUrl` 位置。

@@ -1,21 +1,21 @@
 ---
-title: Rendering
-description: Learn the fundamentals of rendering in React and Next.js.
+title: 渲染
+description: 学习 React 和 Next.js 中的渲染基础知识。
 ---
 
-By default, Next.js **pre-renders** every page. This means that Next.js generates HTML for each page in advance, instead of having it all done by client-side JavaScript. Pre-rendering can result in better performance and SEO.
+默认情况下，Next.js **预渲染**每个页面。这意味着 Next.js 提前为每个页面生成 HTML，而不是全部由客户端 JavaScript 完成。预渲染可以带来更好的性能和 SEO。
 
-Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive (this process is called [hydration](https://react.dev/reference/react-dom/client/hydrateRoot) in React).
+每个生成的 HTML 都与该页面所需的最少 JavaScript 代码相关联。当页面被浏览器加载时，其 JavaScript 代码运行并使页面完全交互（这个过程在 React 中称为[水合](https://react.dev/reference/react-dom/client/hydrateRoot)）。
 
-### Pre-rendering
+### 预渲染
 
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+Next.js 有两种预渲染形式：**静态生成**和**服务器端渲染**。区别在于为页面生成 HTML 的**时间**。
 
-- Static Generation: The HTML is generated at **build time** and will be reused on each request.
-- Server-side Rendering: The HTML is generated on **each request**.
+- 静态生成：HTML 在**构建时**生成，并将在每个请求上重用。
+- 服务器端渲染：HTML 在**每个请求**上生成。
 
-Importantly, Next.js lets you choose which pre-rendering form you'd like to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+重要的是，Next.js 让你选择要为每个页面使用哪种预渲染形式。你可以通过为大多数页面使用静态生成并为其他页面使用服务器端渲染来创建"混合"Next.js 应用。
 
-We recommend using Static Generation over Server-side Rendering for performance reasons. Statically generated pages can be cached by CDN with no extra configuration to boost performance. However, in some cases, Server-side Rendering might be the only option.
+出于性能原因，我们建议使用静态生成而不是服务器端渲染。静态生成的页面可以由 CDN 缓存，无需额外配置即可提高性能。然而，在某些情况下，服务器端渲染可能是唯一的选择。
 
-You can also use client-side data fetching along with Static Generation or Server-side Rendering. That means some parts of a page can be rendered entirely by clientside JavaScript. To learn more, take a look at the [Data Fetching](/docs/pages/building-your-application/data-fetching/client-side) documentation.
+你还可以将客户端数据获取与静态生成或服务器端渲染一起使用。这意味着页面的某些部分可以完全由客户端 JavaScript 渲染。要了解更多信息，请查看[数据获取](/docs/pages/building-your-application/data-fetching/client-side)文档。

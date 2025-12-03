@@ -1,32 +1,10 @@
 ---
-title: Server-side Rendering (SSR)
-description: Use Server-side Rendering to render pages on each request.
+title: 服务器端渲染 (SSR)
+description: 使用服务器端渲染在每次请求时渲染页面。
 ---
 
-> Also referred to as "SSR" or "Dynamic Rendering".
+> 也称为"SSR"或"动态渲染"。
 
-If a page uses **Server-side Rendering**, the page HTML is generated on **each request**.
+如果页面使用**服务器端渲染**，页面 HTML 在**每次请求**时生成。
 
-To use Server-side Rendering for a page, you need to `export` an `async` function called `getServerSideProps`. This function will be called by the server on every request.
-
-For example, suppose that your page needs to pre-render frequently updated data (fetched from an external API). You can write `getServerSideProps` which fetches this data and passes it to `Page` like below:
-
-```jsx
-export default function Page({ data }) {
-  // Render data...
-}
-
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://.../data`)
-  const data = await res.json()
-
-  // Pass data to the page via props
-  return { props: { data } }
-}
-```
-
-As you can see, `getServerSideProps` is similar to `getStaticProps`, but the difference is that `getServerSideProps` is run on every request instead of on build time.
-
-To learn more about how `getServerSideProps` works, check out our [Data Fetching documentation](/docs/pages/building-your-application/data-fetching/get-server-side-props).
+要对页面使用服务器端渲染，你需要`导出`一个名为 `getServerSideProps` 的`异步`函数。此函数将在每个请求上由服务器调用。
