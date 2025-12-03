@@ -45,7 +45,6 @@ export default defineRule({
           'children' in node.argument &&
           node.argument.children
         ) {
-          // @ts-expect-error - `node.argument` could be a `JSXElement` which has property `children`
           const headComponents = node.argument.children.filter(
             (childrenNode) =>
               childrenNode.type === 'JSXElement' && // Type guard added here
