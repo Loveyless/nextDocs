@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev-docs": "next dev --turbo",
-    "build-docs": "next build",
+    "build": "next build",
     "start": "next start",
     "postinstall": "fumadocs-mdx"
   },
